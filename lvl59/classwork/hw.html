@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Page</title>
+</head>
+<body>
+  <h1 id="main">Welcome</h1>
+  <p id="logic"></p>
+  <p id="types"></p>
+
+  <script>
+    document.title = "Changed Title";
+    document.getElementById("main").innerText = "Hello from JavaScript!";
+
+    let a = true;
+    let b = false;
+
+    document.getElementById("logic").innerHTML = 
+      "true && false = " + (a && b) + "<br>" +
+      "true || false = " + (a || b);
+
+    let num = 42;
+    let str = String(num);
+    let bool = Boolean(num);
+    let strToNum = Number("123");
+
+    document.getElementById("types").innerHTML = 
+      "Number → String: " + str + "<br>" +
+      "Number → Boolean: " + bool + "<br>" +
+      "String → Number: " + strToNum;
+  </script>
+</body>
+</html>

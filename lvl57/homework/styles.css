@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  background: #000;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  padding: 60px 20px;
+}
+
+.logo {
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #ccc;
+}
+
+.headline {
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.headline span {
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px 0 50px;
+  padding: 12px 30px;
+  background: #d5ff00;
+  color: #000;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #b6e000;
+}
+
+.watch img {
+  max-width: 320px;
+  width: 100%;
+}

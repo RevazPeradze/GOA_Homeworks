@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { margin: 5px 0; padding: 6px 12px; cursor: pointer; }
+    p { margin: 10px 0; }
+  </style>
+</head>
+<body>
+
+  <h2>1) პარაგრაფის ფერის შეცვლა</h2>
+  <p id="p1">ეს არის პარაგრაფი</p>
+  <button onclick="changeColor()">ფერის შეცვლა</button>
+
+  <h2>2) კენტი თუ ლუწი</h2>
+  <input type="number" id="numInput">
+  <button onclick="checkEvenOdd()">შემოწმება</button>
+
+  <h2>3) პარაგრაფის დამალვა / გამოჩენა</h2>
+  <p id="para1">პირველი პარაგრაფი</p>
+  <p id="para2" style="display:none;">მეორე პარაგრაფი</p>
+  <button onclick="toggleParagraphs()">პარაგრაფების ცვლილება</button>
+
+  <h2>4) admin შემოწმება</h2>
+  <input type="text" id="wordInput">
+  <button onclick="checkAdmin()">შემოწმება</button>
+
+  <h2>5) prompt სახელი</h2>
+  <button onclick="askName()">სახელის კითხვა</button>
+
+  <h2>6) ასაკის კითხვა</h2>
+  <button onclick="askAge()">ასაკის კითხვა</button>
+
+  <script>
+    // 1
+    function changeColor() {
+      document.getElementById("p1").style.color = "blue";
+    }
+
+    // 2
+    function checkEvenOdd() {
+      let num = document.getElementById("numInput").value;
+      if (num % 2 === 0) {
+        console.log("რიცხვი ლუწია");
+      } else {
+        console.log("რიცხვი კენტია");
+      }
+    }
+
+    // 3
+    function toggleParagraphs() {
+      document.getElementById("para1").style.display = "none";
+      document.getElementById("para2").style.display = "block";
+    }
+
+    // 4
+    function checkAdmin() {
+      let word = document.getElementById("wordInput").value;
+      if (word === "admin") {
+        document.body.style.background = "green";
+      } else {
+        document.body.style.background = "red";
+      }
+    }
+
+    // 5
+    function askName() {
+      let name = prompt("რა გქვია?");
+      alert("გამარჯობა " + name);
+    }
+
+    // 6
+    function askAge() {
+      alert("მოგესალმები!");
+      let age = prompt("შეიყვანე შენი ასაკი:");
+      console.log("თქვენი ასაკია: " + age);
+    }
+  </script>
+
+</body>
+</html>
