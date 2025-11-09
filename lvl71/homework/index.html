@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DOM Tasks</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>DOM Tasks</h1>
+
+<section>
+  <button id="addP">Add Paragraph</button>
+  <button id="removeP">Remove Last Paragraph</button>
+  <div id="paraBox"></div>
+</section>
+
+<section>
+  <div id="hoverBox">Hover me</div>
+</section>
+
+<section>
+  <input id="liveInput" placeholder="Type here">
+</section>
+
+<section>
+  <form id="demoForm">
+    <input id="formInput" placeholder="Form input">
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<section>
+  <p id="replaceMe">This will be replaced.</p>
+  <button id="replaceBtn">Replace Paragraph</button>
+</section>
+
+<section>
+  <button id="hideMe">Double-click to hide me</button>
+</section>
+
+<section>
+  <div id="follower"></div>
+</section>
+
+<section>
+  <button id="toggleImg">Toggle Image</button>
+  <div id="imgArea"></div>
+</section>
+
+<script>
+const paraBox = document.getElementById('paraBox');
+document.getElementById('addP').addEventListener('click', () => {
+  const p = document.createElement('p');
+  p.textContent = 'New paragraph';
+  paraBox.appendChild(p);
+});
+document.getElementById('removeP').addEventListener('click', () => {
+  if (paraBox.lastElementChild) paraBox.removeChild(paraBox.lastElementChild);
+});
+
+const hoverBox = document.getElementById('hoverBox');
+hoverBox.addEventListener('mouseenter', () => hoverBox.classList.add('on'));
+hoverBox.addEventListener('mouseleave', () => hoverBox.classList.remove('on'));
+
+document.getElementById('liveInput').addEventListener('input', e => {
+  console.log(e.target.value);
+});
+
+document.getElementById('demoForm').addEventListener('submit', e => {
+  e.preventDefault();
+  alert(document.getElementById('formInput').value);
+});
+
+document.getElementById('replaceBtn').addEventListener('click', () => {
+  const old = document.getElementById('replaceMe');
+  const p = document.createElement('p');
+  p.id = 'replaceMe';
+  p.textContent = 'Replaced paragraph';
+  old.replaceWith(p);
+});
+
+document.getElementById('hideMe').addEventListener('dblclick', e => {
+  e.currentTarget.style.display = 'none';
+});
+
+const follower = document.getElementById('follower');
+document.addEventListener('mousemove', e => {
+  follower.style.left = e.clientX + 'px';
+  follower.style.top = e.clientY + 'px';
+});
+
+const imgArea = document.getElementById('imgArea');
+let imgOn = null;
+document.getElementById('toggleImg').addEventListener('click', () => {
+  if (imgOn) {
+    imgArea.removeChild(imgOn);
+    imgOn = null;
+  } else {
+    const img = document.createElement('img');
+    img.src = 'https://placekitten.com/200/140';
+    img.alt = 'demo';
+    img.className = 'pic';
+    imgArea.appendChild(img);
+    imgOn = img;
+  }
+});
+</script>
+</body>
+</html>

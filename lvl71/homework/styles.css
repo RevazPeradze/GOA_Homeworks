@@ -1,0 +1,13 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, Arial, sans-serif; margin: 20px; line-height: 1.4; }
+h1 { font-size: 20px; margin-bottom: 16px; }
+section { margin: 14px 0; }
+button { padding: 8px 12px; border: 1px solid #ddd; background: #f6f6f6; border-radius: 8px; cursor: pointer; }
+#paraBox p { margin: 6px 0; padding: 8px; background: #fff; border: 1px solid #eee; border-radius: 6px; }
+#hoverBox { height: 80px; border: 1px dashed #bbb; display: grid; place-items: center; border-radius: 8px; background: #fff; }
+#hoverBox.on { background: #ffe08a; }
+input { padding: 8px 10px; border: 1px solid #ddd; border-radius: 8px; width: 260px; }
+form { display: flex; gap: 8px; }
+#follower { position: fixed; width: 14px; height: 14px; border-radius: 50%; background: #2563eb; pointer-events: none; transform: translate(-50%,-50%); }
+#imgArea { margin-top: 8px; }
+.pic { display: block; width: 200px; height: 140px; object-fit: cover; border-radius: 8px; border: 1px solid #eee; }

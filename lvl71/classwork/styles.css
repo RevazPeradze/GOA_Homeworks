@@ -1,0 +1,7 @@
+*{box-sizing:border-box}
+body{font-family:system-ui,Arial,sans-serif;margin:20px;line-height:1.4}
+h1{font-size:20px;margin-bottom:12px}
+section{margin:14px 0;padding:10px;border:1px solid #e5e7eb;border-radius:10px}
+button{padding:8px 12px;border:1px solid #e5e7eb;border-radius:8px;background:#f6f6f6;cursor:pointer}
+#box1 p{margin:6px 0;padding:8px;border:1px solid #eee;border-radius:6px;background:#fff}
+.row{display:flex;gap:8px;flex-wrap:wrap}

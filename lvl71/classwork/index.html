@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simple DOM Tasks</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Simple DOM Tasks</h1>
+
+<section>
+  <h2>1</h2>
+  <button id="addP">ჩაამატე პარაგრაფი</button>
+  <div id="box1"></div>
+</section>
+
+<section>
+  <h2>2</h2>
+  <div id="box2"><h1 id="title2">სათაური</h1></div>
+  <button id="swap">ჩანაცვლება</button>
+</section>
+
+<section>
+  <h2>3</h2>
+  <div class="row">
+    <button onclick="btnClick('A')" onmouseover="btnOver('A')">A</button>
+    <button onclick="btnClick('B')" onmouseover="btnOver('B')">B</button>
+    <button onclick="btnClick('C')" onmouseover="btnOver('C')">C</button>
+  </div>
+</section>
+
+<script>
+const addP=document.getElementById('addP');const box1=document.getElementById('box1');
+addP.onclick=()=>{const p=document.createElement('p');p.textContent='დამატებული ტექსტი';box1.appendChild(p)};
+
+const swap=document.getElementById('swap');const title2=document.getElementById('title2');
+swap.onclick=()=>{if(title2){const b=document.createElement('button');b.textContent='ახალი ღილაკი';title2.replaceWith(b)}};
+
+window.btnClick=t=>console.log('click',t);
+window.btnOver=t=>console.log('over',t);
+</script>
+</body>
+</html>
